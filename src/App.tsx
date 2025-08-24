@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 // Assets
 import phoneFrame from "./assets/photo_2025-08-16_12-28-08.jpg";
 import appScreenshot from "./assets/photo_2025-08-16_12-28-08.jpg";
+import logo from "./assets/Untitled design.jpg";
 import eventImage1 from "./assets/african-wedding.png";
 import eventImage2 from "./assets/camera.png";
 import eventImage3 from "./assets/food.png";
@@ -188,20 +189,20 @@ const MobileMenu = ({
 							>
 								Testimonials
 							</a>
-							<a
+							{/* <a
 								href="#pricing"
 								className="block text-gray-700 hover:text-blue-600 transition-colors font-medium py-2"
 								onClick={onClose}
 							>
 								Pricing
-							</a>
+							</a> */}
 						</div>
 						<div className="mt-8 space-y-3">
-							<button className="w-full text-blue-900 hover:text-blue-700 font-medium px-4 py-2 text-left">
+							{/* <button className="w-full text-blue-900 hover:text-blue-700 font-medium px-4 py-2 text-left">
 								Login
-							</button>
-							<button className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white font-medium px-6 py-3 rounded-full hover:shadow-lg transition-shadow">
-								Get Started
+							</button> */}
+							<button className="w-full bg-gradient-to-r from-gold-300 to-gold-500 text-blue-900 font-medium px-6 py-3 rounded-full hover:shadow-lg transition-shadow">
+								Join Waitlist
 							</button>
 						</div>
 					</nav>
@@ -245,47 +246,63 @@ function App() {
 				<div className="container-custom px-4">
 					<div className="flex justify-between items-center">
 						<div className="text-xl sm:text-2xl font-bold text-blue-900 flex items-center">
-							<span className="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-2 sm:px-3 py-1 rounded-lg mr-2 text-sm sm:text-base">
-								E
-							</span>
-							Eventador
+							<div className="flex -space-x-2">
+								{[...Array(9)].map((_, i) => (
+									<div
+										key={i}
+										className="w-7 h-7 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br border-2 border-gold-600 flex items-center justify-center shadow-lg"
+									>
+										{i === 7 ? (
+											<img
+												src={logo}
+												alt="Logo"
+												className="w-8 h-8 sm:w-14 sm:h-14 rounded-full overflow-hidden"
+											/>
+										) : (
+											<span className="text-gold-600 font-medium">
+												{["E", "V", "E", "N", "T", "A", "D", "O", "R"][i]}
+											</span>
+										)}
+									</div>
+								))}
+							</div>
 						</div>
 
 						{/* Desktop Navigation */}
 						<div className="hidden lg:flex space-x-8">
 							<a
 								href="#home"
-								className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+								className="text-gray-700 hover:text-gold-600 transition-colors font-medium"
 							>
 								Home
 							</a>
 							<a
 								href="#about"
-								className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+								className="text-gray-700 hover:text-gold-600 transition-colors font-medium"
 							>
 								How It Works
 							</a>
 							<a
 								href="#testimonials"
-								className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+								className="text-gray-700 hover:text-gold-600 transition-colors font-medium"
 							>
 								Testimonials
 							</a>
-							<a
+							{/* <a
 								href="#pricing"
 								className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
 							>
 								Pricing
-							</a>
+							</a> */}
 						</div>
 
 						{/* Desktop CTA Buttons */}
 						<div className="hidden lg:flex space-x-4">
-							<button className="text-blue-900 hover:text-blue-700 font-medium px-4 py-2">
+							{/* <button className="text-blue-900 hover:text-blue-700 font-medium px-4 py-2">
 								Login
-							</button>
-							<button className="bg-gradient-to-r from-blue-600 to-blue-800 text-white font-medium px-6 py-2 rounded-full hover:shadow-lg transition-shadow">
-								Get Started
+							</button> */}
+							<button className="bg-gradient-to-r from-gold-300 to-gold-500 text-blue-800 font-medium px-6 py-2 rounded-full hover:shadow-lg transition-shadow">
+								Join Waitlist
 							</button>
 						</div>
 
@@ -319,189 +336,230 @@ function App() {
 			/>
 
 			{/* Hero Section */}
-			<section
-				id="home"
-				className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-900 to-blue-800 pt-16"
-			>
-				<div className="absolute inset-0 z-0">
-					{/* Dynamic particles background */}
-					<div className="absolute inset-0 opacity-20">
-						{[...Array(20)].map((_, i) => (
-							<motion.div
-								key={i}
-								className="absolute rounded-full bg-white"
-								initial={{
-									top: `${Math.random() * 100}%`,
-									left: `${Math.random() * 100}%`,
-									width: `${Math.random() * 10 + 5}px`,
-									height: `${Math.random() * 10 + 5}px`,
-									opacity: Math.random() * 0.3 + 0.1,
-								}}
-								animate={{
-									y: [0, Math.random() * 30 - 15],
-									x: [0, Math.random() * 30 - 15],
-								}}
-								transition={{
-									duration: Math.random() * 5 + 3,
-									repeat: Infinity,
-									repeatType: "reverse",
-								}}
-							/>
-						))}
-					</div>
+			<section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gold-50 via-gold-50 to-gold-100">
+				{/* Sophisticated background layers */}
+				<div className="absolute inset-0">
+					{/* Premium gradient overlay */}
+					<div className="absolute inset-0 bg-gradient-to-br from-yellow-600/5 via-amber-700/8 to-yellow-800/10"></div>
+
+					{/* Deep blue sophisticated accents */}
+					<div className="absolute top-0 left-0 w-2/5 h-full bg-gradient-to-br from-slate-900/12 via-blue-900/8 to-transparent"></div>
+					<div className="absolute bottom-0 right-0 w-1/3 h-2/3 bg-gradient-to-tl from-slate-800/8 via-transparent to-transparent"></div>
+
+					{/* Elegant geometric elements */}
+					<div className="absolute top-32 right-1/4 w-96 h-96 bg-gradient-to-br from-amber-200/10 to-yellow-300/5 rounded-full blur-3xl"></div>
+					<div className="absolute bottom-32 left-1/5 w-64 h-64 bg-gradient-to-tr from-slate-700/8 to-slate-600/5 rounded-full blur-2xl"></div>
+
+					{/* Premium subtle particles */}
+					{[...Array(12)].map((_, i) => (
+						<div
+							key={i}
+							className="absolute w-1 h-1 bg-amber-400/20 rounded-full animate-pulse"
+							style={{
+								top: `${Math.random() * 80 + 10}%`,
+								left: `${Math.random() * 80 + 10}%`,
+								animationDelay: `${Math.random() * 4}s`,
+								animationDuration: `${Math.random() * 3 + 2}s`,
+							}}
+						/>
+					))}
 				</div>
 
-				<div className="container-custom relative z-10 px-4 py-12 sm:py-16 lg:py-24">
-					<div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-						<div className="text-white text-center lg:text-left">
-							<motion.div
-								initial={{ y: 20, opacity: 0 }}
-								animate={{ y: 0, opacity: 1 }}
-								transition={{ duration: 0.5 }}
-								className="inline-block px-3 sm:px-4 py-2 bg-blue-700/30 backdrop-blur rounded-full border border-blue-500/30 mb-6 sm:mb-8"
-							>
-								<span className="font-medium text-sm sm:text-base">
+				<div className="container mx-auto relative z-10 px-8 py-20 max-w-7xl">
+					<div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+						{/* Left Content - Premium Typography */}
+						<div className="text-center lg:text-left space-y-10">
+							{/* Elegant badge */}
+							<div className="inline-flex items-center px-6 py-3 bg-slate-900/90 backdrop-blur-xl rounded-full border border-slate-700/50 shadow-lg">
+								<span className="text-amber-200 font-medium text-sm tracking-wider uppercase letter-spacing">
 									LIFE HAPPENS LIVE
 								</span>
-							</motion.div>
+							</div>
 
-							<motion.h1
-								initial={{ y: 20, opacity: 0 }}
-								animate={{ y: 0, opacity: 1 }}
-								transition={{ duration: 0.5, delay: 0.1 }}
-								className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight"
-							>
-								Life Happens Live.
-								<br />
-								<span className="bg-gradient-to-r from-yellow-300 to-yellow-400 bg-clip-text text-transparent">
-									Let's Make It Remarkable.
-								</span>
-							</motion.h1>
-
-							<motion.p
-								initial={{ y: 20, opacity: 0 }}
-								animate={{ y: 0, opacity: 1 }}
-								transition={{ duration: 0.5, delay: 0.2 }}
-								className="text-lg sm:text-xl text-blue-100 mb-4 sm:mb-6 max-w-2xl mx-auto lg:mx-0"
-							>
-								Eventador: Where Visionary Hosts Meet Trusted Curators.
-							</motion.p>
-
-							<motion.p
-								initial={{ y: 20, opacity: 0 }}
-								animate={{ y: 0, opacity: 1 }}
-								transition={{ duration: 0.5, delay: 0.25 }}
-								className="text-base sm:text-lg text-blue-200 mb-6 sm:mb-10 max-w-3xl mx-auto lg:mx-0"
-							>
-								Plan, Book, and Celebrate — All Without the Headache.
-							</motion.p>
-
-							<motion.div
-								initial={{ y: 20, opacity: 0 }}
-								animate={{ y: 0, opacity: 1 }}
-								transition={{ duration: 0.5, delay: 0.3 }}
-								className="text-blue-100 mb-6 sm:mb-10 max-w-3xl mx-auto lg:mx-0 text-sm sm:text-base"
-							>
-								<p className="mb-3 sm:mb-4">
-									Imagine this: You dream of an unforgettable moment. A wedding
-									that feels like magic. A conference that sparks revolutions. A
-									birthday that echoes with joy. Now imagine bringing it to life
-									without endless calls, vendor vetting, or sleepless nights.
-								</p>
-								<p className="mb-3 sm:mb-4 font-semibold text-yellow-300">
-									That's Eventador.
-								</p>
-								<p>
-									We orchestrate your vision with a network of rigorously vetted
-									partners. One platform. Two intuitive apps. Zero compromises.
-								</p>
-								<p className="mt-3 sm:mt-4 font-semibold text-yellow-300">
-									Your moment. Our mastery.
-								</p>
-							</motion.div>
-
-							<motion.div
-								initial={{ y: 20, opacity: 0 }}
-								animate={{ y: 0, opacity: 1 }}
-								transition={{ duration: 0.5, delay: 0.4 }}
-								className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start"
-							>
-								<button className="bg-gradient-to-r from-yellow-500 to-yellow-400 text-blue-900 font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:shadow-lg hover:shadow-yellow-500/30 transition-all flex items-center justify-center group">
-									Explore Services
-									<span className="ml-2 group-hover:translate-x-1 transition-transform">
-										→
+							{/* Premium headline with sophisticated typography */}
+							<div className="space-y-6">
+								<h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-light leading-[0.9] tracking-tight">
+									<span className="text-slate-900 font-extralight">
+										Life Happens
 									</span>
-								</button>
+									<br />
+									<span className="text-slate-900 font-light">Live.</span>
+									<br />
+									<span className="bg-gradient-to-r from-amber-600 via-yellow-600 to-amber-700 bg-clip-text text-transparent font-normal">
+										Make It Remarkable.
+									</span>
+								</h1>
+							</div>
 
-								<button className="bg-white/10 backdrop-blur-sm text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full border border-white/30 hover:bg-white/20 transition-colors">
-									Join as Vendor
-								</button>
-							</motion.div>
+							{/* Refined tagline */}
+							<p className="text-2xl text-slate-700 font-light max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+								Where Visionary Hosts Meet Trusted Curators
+							</p>
 
-							<motion.div
-								initial={{ y: 20, opacity: 0 }}
-								animate={{ y: 0, opacity: 1 }}
-								transition={{ duration: 0.5, delay: 0.4 }}
-								className="mt-8 sm:mt-12 flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6"
-							>
-								<div className="flex -space-x-2 sm:-space-x-4">
-									{[...Array(4)].map((_, i) => (
+							{/* Elegant subtitle */}
+							<p className="text-xl text-slate-600 font-light max-w-2xl mx-auto lg:mx-0">
+								Plan, Book, and Celebrate — Without the Complexity
+							</p>
+
+							{/* Premium description */}
+							<div className="text-slate-600 max-w-3xl mx-auto lg:mx-0 space-y-6 text-lg leading-relaxed font-light">
+								<p className="text-xl">
+									Imagine orchestrating an unforgettable moment — a wedding that
+									resonates with elegance, a conference that ignites innovation,
+									celebrations that echo with authentic joy. Now imagine
+									achieving this without the traditional complexities.
+								</p>
+								<p className="text-slate-700 font-normal text-3xl">
+									This is Eventador.
+								</p>
+								<p className="text-xl">
+									We curate exceptional experiences through our network of
+									meticulously vetted partners. One sophisticated platform.
+									Seamless execution. Uncompromising quality.
+								</p>
+								<p className="text-amber-700 font-medium text-xl italic">
+									Your vision. Our expertise.
+								</p>
+							</div>
+
+							{/* Premium CTA buttons */}
+							<div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start pt-6">
+								<button className="relative bg-amber-50/80 backdrop-blur-sm text-slate-800 font-medium px-10 py-4 rounded-full border border-amber-200/60 hover:bg-amber-100/80 hover:border-amber-300/80 transition-all duration-300 group">
+									<span className="text-lg">Partner With Us</span>
+									<div className="absolute inset-0 bg-gradient-to-r from-amber-200/0 via-amber-200/20 to-amber-200/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
+								</button>
+							</div>
+
+							{/* Elegant trust indicators */}
+							<div className="flex flex-wrap items-center justify-center lg:justify-start gap-8 pt-10">
+								<div className="flex -space-x-2">
+									{[...Array(9)].map((_, i) => (
 										<div
 											key={i}
-											className="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-blue-700 border-2 border-blue-900 flex items-center justify-center"
+											className="w-14 h-14 rounded-full bg-gradient-to-br border-2 border-gold-600 flex items-center justify-center shadow-lg"
 										>
-											<span className="text-xs sm:text-lg font-bold">
-												{i + 1}
+											<span className="text-gold-600 font-medium">
+												{["E", "V", "E", "N", "T", "A", "D", "O", "R"][i]}
 											</span>
 										</div>
 									))}
 								</div>
-								<p className="text-blue-200 font-medium text-sm sm:text-base">
-									Trusted by thousands of event planners
-								</p>
-							</motion.div>
+								<div className="text-slate-600 font-light text-lg">
+									Trusted by discerning event professionals worldwide
+								</div>
+							</div>
 						</div>
 
-						<motion.div
-							initial={{ scale: 0.9, opacity: 0 }}
-							animate={{ scale: 1, opacity: 1 }}
-							transition={{ duration: 0.5, delay: 0.3 }}
-							className="relative flex justify-center lg:justify-end"
-						>
-							<div className="relative z-10 w-[240px] sm:w-[280px] md:w-[320px] transform transition duration-500 hover:scale-105">
-								<div className="relative h-[500px] sm:h-[580px]">
-									<img
-										src={phoneFrame}
-										alt="Mobile mockup frame"
-										className="absolute inset-0 w-full h-full object-contain pointer-events-none"
-										draggable="false"
-									/>
+						{/* Right Content - Premium Phone Mockup */}
+						<div className="relative flex justify-center lg:justify-end">
+							<div className="relative z-20 w-80 lg:w-96 transform transition duration-700 hover:scale-105">
+								{/* Sophisticated phone frame */}
+								<div className="relative h-[680px] bg-gradient-to-b from-slate-800 via-slate-900 to-black rounded-[3.5rem] p-3 shadow-2xl shadow-slate-900/30">
+									{/* Premium screen */}
+									<div className="w-full h-full bg-gradient-to-b from-amber-50 via-yellow-50 to-amber-100 rounded-[3rem] overflow-hidden relative shadow-inner">
+										{/* Refined status bar */}
+										<div className="flex justify-between items-center px-8 py-4 bg-gradient-to-r from-amber-50/90 to-yellow-50/90 backdrop-blur-sm">
+											<span className="font-medium text-slate-800 text-sm">
+												9:41
+											</span>
+											<div className="flex items-center space-x-2">
+												<div className="flex space-x-1">
+													{[...Array(3)].map((_, i) => (
+														<div
+															key={i}
+															className="w-1 h-3 bg-slate-700 rounded-full"
+														></div>
+													))}
+												</div>
+												<div className="w-8 h-4 border border-slate-700 rounded-sm">
+													<div className="w-full h-full bg-slate-700 rounded-sm"></div>
+												</div>
+											</div>
+										</div>
 
-									<div className="absolute inset-0 flex items-center justify-center p-[12%]">
-										<div className="w-full h-full overflow-hidden rounded-[40px]">
-											<img
-												src={appScreenshot}
-												alt="Eventador App Preview"
-												className="w-full h-full object-cover object-top"
-												loading="lazy"
-											/>
+										{/* Elegant app interface */}
+										<div className="px-8 py-8 space-y-8">
+											{/* Premium logo presentation */}
+											<div className="flex justify-center py-4">
+												<div className="w-20 h-20 bg-gradient-to-br from-amber-100 to-yellow-200 rounded-full flex items-center justify-center border border-amber-300/30 shadow-lg">
+													<div className="text-3xl">😊</div>
+												</div>
+											</div>
+
+											{/* Sophisticated welcome */}
+											<div className="text-center space-y-3">
+												<h3 className="text-slate-800 font-light text-2xl tracking-wide">
+													Eventador
+												</h3>
+												<p className="text-slate-600 font-light">
+													Crafting Remarkable Moments
+												</p>
+											</div>
+
+											{/* Premium feature cards */}
+											<div className="space-y-4">
+												{[
+													{
+														title: "Curated Planning",
+														desc: "Sophisticated event architecture",
+													},
+													{
+														title: "Vetted Partners",
+														desc: "Premium vendor network",
+													},
+													{
+														title: "Seamless Execution",
+														desc: "Flawless delivery guaranteed",
+													},
+												].map((feature, i) => (
+													<div
+														key={i}
+														className="bg-slate-50/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/40 shadow-sm hover:shadow-md transition-shadow duration-300"
+													>
+														<div className="flex items-start space-x-4">
+															<div className="w-12 h-12 bg-gradient-to-br from-slate-700 to-slate-800 rounded-xl flex items-center justify-center shadow-lg">
+																<span className="text-amber-200 text-lg font-light">
+																	{i + 1}
+																</span>
+															</div>
+															<div className="flex-1">
+																<h4 className="text-slate-800 font-medium text-lg">
+																	{feature.title}
+																</h4>
+																<p className="text-slate-600 text-sm font-light mt-1">
+																	{feature.desc}
+																</p>
+															</div>
+														</div>
+													</div>
+												))}
+											</div>
 										</div>
 									</div>
 								</div>
 
-								<div className="absolute inset-x-0 bottom-0 h-10 bg-blue-900/30 blur-2xl rounded-full z-0"></div>
+								{/* Elegant floating elements */}
+								<div className="absolute -top-12 -right-12 w-24 h-24 bg-gradient-to-br from-slate-800/10 to-slate-900/5 backdrop-blur-xl rounded-full border border-slate-700/20 animate-pulse flex items-center justify-center">
+									<span className="text-amber-600 text-2xl">✨</span>
+								</div>
+								<div
+									className="absolute -bottom-8 -left-8 w-20 h-20 bg-gradient-to-br from-amber-100/40 to-yellow-200/30 backdrop-blur-xl rounded-2xl border border-amber-300/30 rotate-12 animate-pulse flex items-center justify-center"
+									style={{ animationDuration: "4s" }}
+								>
+									<span className="text-slate-700 text-xl">🎯</span>
+								</div>
 							</div>
 
-							<div className="absolute -top-6 -right-6 w-16 h-16 sm:w-24 sm:h-24 rounded-full bg-purple-600/20 backdrop-blur border border-purple-500/30 animate-pulse"></div>
-							<div className="absolute -bottom-8 -left-6 w-12 h-12 sm:w-20 sm:h-20 rounded-lg bg-yellow-500/20 backdrop-blur border border-yellow-400/30 rotate-12"></div>
-						</motion.div>
+							{/* Sophisticated background glow */}
+							<div className="absolute inset-0 bg-gradient-to-r from-amber-200/5 via-yellow-300/5 to-amber-400/5 blur-3xl rounded-full transform scale-150 -z-10"></div>
+						</div>
 					</div>
 				</div>
 
-				{/* Scroll indicator */}
-				<div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-					<div className="w-8 h-12 sm:w-10 sm:h-16 rounded-full border-2 border-white/30 flex justify-center">
-						<div className="w-1 h-3 sm:h-4 bg-white rounded-full mt-2 sm:mt-3 animate-pulse"></div>
+				{/* Refined scroll indicator */}
+				<div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
+					<div className="w-8 h-14 rounded-full border border-slate-400/30 bg-amber-50/20 backdrop-blur-sm flex justify-center">
+						<div className="w-0.5 h-3 bg-slate-600 rounded-full mt-3 animate-pulse"></div>
 					</div>
 				</div>
 			</section>
@@ -530,7 +588,7 @@ function App() {
 							<button
 								className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full transition-colors text-sm sm:text-base ${
 									activeTab === "host"
-										? "bg-blue-600 text-white"
+										? "bg-blue-800 text-gold-400"
 										: "text-gray-700"
 								}`}
 								onClick={() => setActiveTab("host")}
@@ -540,7 +598,7 @@ function App() {
 							<button
 								className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full transition-colors text-sm sm:text-base ${
 									activeTab === "vendor"
-										? "bg-blue-600 text-white"
+										? "bg-blue-800 text-gold-400"
 										: "text-gray-700"
 								}`}
 								onClick={() => setActiveTab("vendor")}
@@ -565,23 +623,9 @@ function App() {
 									<div className="p-6 sm:p-8 lg:p-12">
 										<div className="bg-blue-50 p-4 sm:p-6 rounded-xl mb-6 sm:mb-8">
 											<p className="text-base sm:text-lg italic text-blue-900 mb-4">
-												"Eventador isn't an app; it's my secret weapon. I tap,
-												book, and breathe. They handle the rest."
+												"Eventador isn't just an app; it's my secret weapon. I
+												tap, book, and breathe. They handle the rest."
 											</p>
-											<div className="flex items-center">
-												<div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-3 text-sm sm:text-base">
-													U
-												</div>
-												<div>
-													<p className="font-semibold text-blue-900 text-sm sm:text-base">
-														User App Screenshot
-													</p>
-													<p className="text-xs sm:text-sm text-blue-700">
-														Clean interface showing "Booking Confirmed:
-														Catering, Lighting, Venue Secured"
-													</p>
-												</div>
-											</div>
 										</div>
 
 										<h3 className="text-xl sm:text-2xl font-bold text-blue-900 mb-4 sm:mb-6">
@@ -614,7 +658,7 @@ function App() {
 													</h4>
 													<p className="text-gray-600 text-sm sm:text-base">
 														Track all vendor progress in real-time through our
-														app with "Vendor En Route!" notifications.
+														app notifications.
 													</p>
 												</div>
 											</div>
@@ -657,20 +701,6 @@ function App() {
 												"This is where serious partners thrive. We focus on
 												craft; Eventador handles the crowd."
 											</p>
-											<div className="flex items-center">
-												<div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-3 text-sm sm:text-base">
-													V
-												</div>
-												<div>
-													<p className="font-semibold text-green-900 text-sm sm:text-base">
-														Vendor App Screenshot
-													</p>
-													<p className="text-xs sm:text-sm text-green-700">
-														Calendar view with "Confirmed Bookings" and
-														"Real-Time Earnings" dashboard
-													</p>
-												</div>
-											</div>
 										</div>
 
 										<h3 className="text-xl sm:text-2xl font-bold text-blue-900 mb-4 sm:mb-6">
@@ -980,470 +1010,230 @@ function App() {
 							</motion.div>
 						))}
 					</div>
-
-					{/* App Spotlight Section */}
-					<div className="mt-16 sm:mt-20">
-						<div className="text-center mb-12 sm:mb-16">
-							<h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-900 mb-4">
-								Your Vision, Digitally Perfected
-							</h3>
-							<p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-								Side-by-side mockups of User App & Vendor App
-							</p>
-						</div>
-
-						<div className="grid lg:grid-cols-2 gap-8 sm:gap-12">
-							<div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 sm:p-8 rounded-2xl">
-								<h4 className="text-xl sm:text-2xl font-bold text-blue-900 mb-4">
-									User App
-								</h4>
-								<p className="text-gray-700 mb-6 text-sm sm:text-base">
-									Browse, book, track, chat – all in your pocket. See real-time
-									vendor arrival updates.
-								</p>
-								<div className="relative">
-									<img
-										src={userApp}
-										alt="User App Screenshot"
-										className="rounded-xl shadow-lg w-full"
-									/>
-									<div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-blue-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-lg text-xs sm:text-sm font-medium">
-										Service Journey Tracker
-									</div>
-								</div>
-								<p className="text-xs sm:text-sm text-blue-700 mt-3 sm:mt-4 italic">
-									Screenshot: "Service Journey" tracker showing "Vendor En
-									Route!"
-								</p>
-							</div>
-
-							<div className="bg-gradient-to-br from-green-50 to-green-100 p-6 sm:p-8 rounded-2xl">
-								<h4 className="text-xl sm:text-2xl font-bold text-green-900 mb-4">
-									Vendor App
-								</h4>
-								<p className="text-gray-700 mb-6 text-sm sm:text-base">
-									Manage bookings, payments, and client chats in one hub. Your
-									business, simplified.
-								</p>
-								<div className="relative">
-									<img
-										src={vendorApp}
-										alt="Vendor App Screenshot"
-										className="rounded-xl shadow-lg w-full"
-									/>
-									<div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-green-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-lg text-xs sm:text-sm font-medium">
-										Today's Events
-									</div>
-								</div>
-								<p className="text-xs sm:text-sm text-green-700 mt-3 sm:mt-4 italic">
-									Screenshot: "Today's Events" map with optimized travel routes
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<div className="text-center mt-12 sm:mt-16">
-						<button className="bg-gradient-to-r from-blue-600 to-blue-800 text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:shadow-lg transition-all">
-							Explore More Events
-						</button>
-					</div>
-				</div>
-			</section>
-
-			{/* Pricing Section */}
-			<section id="pricing" className="py-16 sm:py-20 bg-gray-50">
-				<div className="container-custom px-4">
-					<div className="text-center mb-12 sm:mb-16">
-						<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-900 mb-4">
-							Simple, Transparent Pricing
-						</h2>
-						<p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-							Only pay when your event succeeds. No hidden fees, no surprises.
-						</p>
-					</div>
-
-					<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
-						<div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
-							<div className="bg-blue-50 p-6 sm:p-8 text-center">
-								<h3 className="text-xl sm:text-2xl font-bold text-blue-900 mb-2">
-									For Hosts
-								</h3>
-								<div className="text-3xl sm:text-4xl font-bold text-blue-800 mb-2">
-									Free
-								</div>
-								<p className="text-gray-600 text-sm sm:text-base">
-									No upfront costs
-								</p>
-							</div>
-							<div className="p-6 sm:p-8">
-								<ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-									<li className="flex items-center">
-										<div className="text-green-500 mr-3">✓</div>
-										<span className="text-sm sm:text-base">
-											Access to all vendors
-										</span>
-									</li>
-									<li className="flex items-center">
-										<div className="text-green-500 mr-3">✓</div>
-										<span className="text-sm sm:text-base">
-											Event planning tools
-										</span>
-									</li>
-									<li className="flex items-center">
-										<div className="text-green-500 mr-3">✓</div>
-										<span className="text-sm sm:text-base">
-											Real-time tracking
-										</span>
-									</li>
-									<li className="flex items-center">
-										<div className="text-green-500 mr-3">✓</div>
-										<span className="text-sm sm:text-base">
-											Payment protection
-										</span>
-									</li>
-								</ul>
-								<p className="text-center text-gray-600 mb-6 text-sm sm:text-base">
-									<span className="font-semibold">5% service fee</span> on
-									successful bookings
-								</p>
-								<button className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white font-bold py-3 rounded-lg hover:shadow-lg transition-all">
-									Start Planning
-								</button>
-							</div>
-						</div>
-
-						<div className="bg-white rounded-2xl shadow-xl border-2 border-blue-500 overflow-hidden transform scale-105 relative">
-							<div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-yellow-400 text-blue-900 font-bold px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">
-								MOST POPULAR
-							</div>
-							<div className="bg-blue-500 p-6 sm:p-8 text-center">
-								<h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
-									For Vendors
-								</h3>
-								<div className="text-3xl sm:text-4xl font-bold text-white mb-2">
-									15%
-								</div>
-								<p className="text-blue-100 text-sm sm:text-base">
-									Per completed booking
-								</p>
-							</div>
-							<div className="p-6 sm:p-8">
-								<ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-									<li className="flex items-center">
-										<div className="text-green-500 mr-3">✓</div>
-										<span className="text-sm sm:text-base">
-											All Free features
-										</span>
-									</li>
-									<li className="flex items-center">
-										<div className="text-green-500 mr-3">✓</div>
-										<span className="text-sm sm:text-base">
-											Premium placement
-										</span>
-									</li>
-									<li className="flex items-center">
-										<div className="text-green-500 mr-3">✓</div>
-										<span className="text-sm sm:text-base">
-											Business dashboard
-										</span>
-									</li>
-									<li className="flex items-center">
-										<div className="text-green-500 mr-3">✓</div>
-										<span className="text-sm sm:text-base">
-											Direct client messaging
-										</span>
-									</li>
-									<li className="flex items-center">
-										<div className="text-green-500 mr-3">✓</div>
-										<span className="text-sm sm:text-base">
-											Analytics & insights
-										</span>
-									</li>
-								</ul>
-								<button className="w-full bg-gradient-to-r from-yellow-500 to-yellow-400 text-blue-900 font-bold py-3 rounded-lg hover:shadow-lg transition-all">
-									Join as Vendor
-								</button>
-							</div>
-						</div>
-
-						<div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden sm:col-span-2 lg:col-span-1">
-							<div className="bg-blue-50 p-6 sm:p-8 text-center">
-								<h3 className="text-xl sm:text-2xl font-bold text-blue-900 mb-2">
-									Enterprise
-								</h3>
-								<div className="text-3xl sm:text-4xl font-bold text-blue-800 mb-2">
-									Custom
-								</div>
-								<p className="text-gray-600 text-sm sm:text-base">
-									For large organizations
-								</p>
-							</div>
-							<div className="p-6 sm:p-8">
-								<ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-									<li className="flex items-center">
-										<div className="text-green-500 mr-3">✓</div>
-										<span className="text-sm sm:text-base">
-											All Pro features
-										</span>
-									</li>
-									<li className="flex items-center">
-										<div className="text-green-500 mr-3">✓</div>
-										<span className="text-sm sm:text-base">
-											Dedicated account manager
-										</span>
-									</li>
-									<li className="flex items-center">
-										<div className="text-green-500 mr-3">✓</div>
-										<span className="text-sm sm:text-base">
-											Custom integrations
-										</span>
-									</li>
-									<li className="flex items-center">
-										<div className="text-green-500 mr-3">✓</div>
-										<span className="text-sm sm:text-base">
-											Priority support
-										</span>
-									</li>
-									<li className="flex items-center">
-										<div className="text-green-500 mr-3">✓</div>
-										<span className="text-sm sm:text-base">
-											Volume discounts
-										</span>
-									</li>
-								</ul>
-								<button className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white font-bold py-3 rounded-lg hover:shadow-lg transition-all">
-									Contact Sales
-								</button>
-							</div>
-						</div>
-					</div>
 				</div>
 			</section>
 
 			{/* The Promise Section */}
-			<section className="py-16 sm:py-20 bg-gradient-to-r from-blue-900 to-blue-800 relative overflow-hidden">
-				<div className="absolute inset-0 bg-black/20"></div>
-				<div className="container-custom relative z-10 text-center px-4">
-					<div className="max-w-4xl mx-auto">
-						<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 sm:mb-8">
-							We take the weight off your shoulders, so you can carry the moment
-							in your heart.
+			<section className="relative py-24 sm:py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
+				{/* Sophisticated background elements */}
+				<div className="absolute inset-0">
+					<div className="absolute inset-0 bg-gradient-to-r from-amber-600/5 via-transparent to-amber-700/5"></div>
+					<div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-amber-400/8 to-yellow-500/5 rounded-full blur-3xl"></div>
+					<div className="absolute bottom-0 right-1/3 w-80 h-80 bg-gradient-to-tl from-slate-700/15 to-transparent rounded-full blur-2xl"></div>
+
+					{/* Elegant particles */}
+					{[...Array(15)].map((_, i) => (
+						<div
+							key={i}
+							className="absolute w-1 h-1 bg-amber-300/20 rounded-full animate-pulse"
+							style={{
+								top: `${Math.random() * 80 + 10}%`,
+								left: `${Math.random() * 80 + 10}%`,
+								animationDelay: `${Math.random() * 3}s`,
+								animationDuration: `${Math.random() * 4 + 2}s`,
+							}}
+						/>
+					))}
+				</div>
+
+				<div className="container mx-auto relative z-10 text-center px-8 max-w-6xl">
+					<div className="max-w-5xl mx-auto space-y-8">
+						<h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light text-white leading-tight tracking-tight">
+							We take the weight off your shoulders,
+							<br />
+							<span className="bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent font-normal">
+								so you can carry the moment in your heart.
+							</span>
 						</h2>
-						<p className="text-lg sm:text-xl text-blue-200 max-w-2xl mx-auto">
-							The Promise: Why We Exist
-						</p>
-					</div>
-				</div>
-			</section>
-
-			{/* Final CTA */}
-			<section className="py-16 sm:py-20 bg-gradient-to-r from-blue-900 to-blue-800">
-				<div className="container-custom text-center px-4">
-					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 max-w-3xl mx-auto">
-						Ready to Transform Chaos into Celebration?
-					</h2>
-					<p className="text-lg sm:text-xl text-blue-200 mb-8 sm:mb-10 max-w-2xl mx-auto">
-						Join thousands of event professionals who trust Eventador to make
-						their vision a reality.
-					</p>
-					<div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-						<button className="bg-white text-blue-900 font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:shadow-lg hover:bg-blue-50 transition-all">
-							Host an Event: Start Your Journey
-						</button>
-						<button className="bg-transparent border-2 border-white text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-white/10 transition-colors">
-							Vendor Application: Grow Your Reach
-						</button>
-					</div>
-				</div>
-			</section>
-
-			{/* Footer */}
-			<footer className="bg-blue-950 text-white py-12 sm:py-16">
-				<div className="container-custom px-4">
-					<div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10">
-						<div className="sm:col-span-2">
-							<div className="text-xl sm:text-2xl font-bold mb-4 flex items-center">
-								<span className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-2 sm:px-3 py-1 rounded-lg mr-2 text-sm sm:text-base">
-									E
-								</span>
-								Eventador
-							</div>
-							<p className="text-blue-300 mb-6 max-w-md text-sm sm:text-base">
-								Where visionary hosts meet trusted curators. Making event
-								planning effortless since 2023.
+						<div className="pt-6">
+							<p className="text-2xl text-amber-200 font-light tracking-wide">
+								The Promise: Why We Exist
 							</p>
-							<div className="flex space-x-3 sm:space-x-4">
-								<a
-									href="#"
-									className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-blue-900 flex items-center justify-center hover:bg-blue-800 transition-colors text-xs sm:text-sm"
-								>
-									<span className="sr-only">Facebook</span>f
-								</a>
-								<a
-									href="#"
-									className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-blue-900 flex items-center justify-center hover:bg-blue-800 transition-colors text-xs sm:text-sm"
-								>
-									<span className="sr-only">Twitter</span>t
-								</a>
-								<a
-									href="https://www.instagram.com/eventadorgh/"
-									className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-blue-900 flex items-center justify-center hover:bg-blue-800 transition-colors text-xs sm:text-sm"
-								>
-									<span className="sr-only">Instagram</span>i
-								</a>
-								<a
-									href="#"
-									className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-blue-900 flex items-center justify-center hover:bg-blue-800 transition-colors text-xs sm:text-sm"
-								>
-									<span className="sr-only">LinkedIn</span>in
-								</a>
+							<div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto mt-6"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section className="relative py-24 sm:py-32 bg-gradient-to-br from-slate-800 via-slate-900 to-black overflow-hidden">
+				{/* Sophisticated background */}
+				<div className="absolute inset-0">
+					<div className="absolute inset-0 bg-gradient-to-b from-amber-600/8 via-transparent to-amber-700/8"></div>
+					<div className="absolute top-1/4 left-0 w-1/2 h-1/2 bg-gradient-to-br from-amber-500/5 via-transparent to-transparent"></div>
+					<div className="absolute bottom-0 right-0 w-2/3 h-2/3 bg-gradient-to-tl from-slate-700/10 via-transparent to-transparent"></div>
+				</div>
+
+				<div className="container mx-auto text-center px-8 relative z-10 max-w-6xl">
+					<div className="space-y-12">
+						<div className="space-y-8">
+							<h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-light text-white leading-tight tracking-tight max-w-5xl mx-auto">
+								Ready to Transform
+								<br />
+								<span className="bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-500 bg-clip-text text-transparent font-normal">
+									Chaos into Celebration?
+								</span>
+							</h2>
+							<p className="text-xl sm:text-2xl text-slate-300 font-light max-w-3xl mx-auto leading-relaxed">
+								Join discerning event professionals who trust Eventador to
+								transform their vision into reality.
+							</p>
+						</div>
+
+						<div className="flex flex-col sm:flex-row justify-center gap-6 pt-8">
+							<button className="group relative bg-gradient-to-r from-amber-100 to-yellow-200 text-slate-900 font-medium px-12 py-5 rounded-full transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/20 overflow-hidden">
+								<div className="absolute inset-0 bg-gradient-to-r from-amber-200/30 via-transparent to-yellow-300/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+								<span className="relative text-lg font-medium">
+									Host an Event: Begin Your Journey
+								</span>
+							</button>
+
+							<button className="group relative bg-slate-800/60 backdrop-blur-xl border-2 border-amber-300/40 text-amber-100 font-medium px-12 py-5 rounded-full hover:bg-slate-700/60 hover:border-amber-300/60 transition-all duration-300">
+								<div className="absolute inset-0 bg-gradient-to-r from-amber-200/5 via-transparent to-amber-300/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
+								<span className="relative text-lg">
+									Partner With Us: Expand Your Reach
+								</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			{/* Premium Footer */}
+			<footer className="relative bg-gradient-to-b from-black to-slate-950 text-white overflow-hidden">
+				{/* Subtle background elements */}
+				<div className="absolute inset-0">
+					<div className="absolute bottom-0 left-1/4 w-96 h-48 bg-gradient-to-t from-amber-600/3 to-transparent blur-2xl"></div>
+					<div className="absolute top-0 right-1/4 w-80 h-40 bg-gradient-to-b from-slate-700/8 to-transparent blur-xl"></div>
+				</div>
+
+				<div className="container mx-auto px-8 relative z-10 py-20 sm:py-24">
+					<div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-16">
+						{/* Brand Section */}
+						<div className="sm:col-span-2 space-y-8">
+							<div className="space-y-6">
+								<div className="flex items-center space-x-4">
+									<div className="w-12 h-12 bg-gradient-to-br from-amber-200 to-yellow-300 rounded-xl flex items-center justify-center shadow-lg">
+										<span className="text-slate-900 text-xl font-bold">E</span>
+									</div>
+									<span className="text-3xl font-light tracking-wide">
+										Eventador
+									</span>
+								</div>
+								<p className="text-slate-300 font-light text-lg leading-relaxed max-w-md">
+									Where visionary hosts meet trusted curators. Crafting
+									exceptional experiences.
+								</p>
+							</div>
+
+							{/* Social Links */}
+							<div className="flex space-x-4">
+								{[
+									{ name: "Facebook", symbol: "f", href: "#" },
+									{ name: "Twitter", symbol: "𝕏", href: "#" },
+									{
+										name: "Instagram",
+										symbol: "📷",
+										href: "https://www.instagram.com/eventadorgh/",
+									},
+									{ name: "LinkedIn", symbol: "in", href: "#" },
+								].map((social, i) => (
+									<a
+										key={i}
+										href={social.href}
+										className="group w-12 h-12 rounded-full bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 flex items-center justify-center hover:bg-slate-700/60 hover:border-amber-300/30 transition-all duration-300"
+									>
+										<span className="text-slate-300 group-hover:text-amber-200 transition-colors text-sm">
+											{social.symbol}
+										</span>
+										<span className="sr-only">{social.name}</span>
+									</a>
+								))}
 							</div>
 						</div>
 
-						<div>
-							<h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">
+						{/* Navigation Columns */}
+						<div className="space-y-6">
+							<h4 className="text-xl font-medium text-amber-200 tracking-wide">
 								For Hosts
 							</h4>
-							<ul className="space-y-2 text-blue-300">
-								<li>
-									<a
-										href="#"
-										className="hover:text-white transition-colors text-sm sm:text-base"
-									>
-										How It Works
-									</a>
-								</li>
-								<li>
-									<a
-										href="#"
-										className="hover:text-white transition-colors text-sm sm:text-base"
-									>
-										Event Services
-									</a>
-								</li>
-								<li>
-									<a
-										href="#"
-										className="hover:text-white transition-colors text-sm sm:text-base"
-									>
-										Pricing
-									</a>
-								</li>
-								<li>
-									<a
-										href="#"
-										className="hover:text-white transition-colors text-sm sm:text-base"
-									>
-										Success Stories
-									</a>
-								</li>
+							<ul className="space-y-4">
+								{[
+									"How It Works",
+									"Event Services",
+									// "Pricing",
+									"Success Stories",
+								].map((item, i) => (
+									<li key={i}>
+										<a
+											href="#"
+											className="text-slate-300 hover:text-amber-200 transition-colors duration-300 font-light text-lg"
+										>
+											{item}
+										</a>
+									</li>
+								))}
 							</ul>
 						</div>
 
-						<div>
-							<h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">
-								For Vendors
+						<div className="space-y-6">
+							<h4 className="text-xl font-medium text-amber-200 tracking-wide">
+								For Partners
 							</h4>
-							<ul className="space-y-2 text-blue-300">
-								<li>
-									<a
-										href="#"
-										className="hover:text-white transition-colors text-sm sm:text-base"
-									>
-										Become a Partner
-									</a>
-								</li>
-								<li>
-									<a
-										href="#"
-										className="hover:text-white transition-colors text-sm sm:text-base"
-									>
-										Vendor Resources
-									</a>
-								</li>
-								<li>
-									<a
-										href="#"
-										className="hover:text-white transition-colors text-sm sm:text-base"
-									>
-										Community
-									</a>
-								</li>
-								<li>
-									<a
-										href="#"
-										className="hover:text-white transition-colors text-sm sm:text-base"
-									>
-										Success Stories
-									</a>
-								</li>
+							<ul className="space-y-4">
+								{[
+									"Become a Partner",
+									"Partner Resources",
+									"Community",
+									"Success Stories",
+								].map((item, i) => (
+									<li key={i}>
+										<a
+											href="#"
+											className="text-slate-300 hover:text-amber-200 transition-colors duration-300 font-light text-lg"
+										>
+											{item}
+										</a>
+									</li>
+								))}
 							</ul>
 						</div>
 
-						<div>
-							<h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">
+						<div className="space-y-6">
+							<h4 className="text-xl font-medium text-amber-200 tracking-wide">
 								Company
 							</h4>
-							<ul className="space-y-2 text-blue-300">
-								<li>
-									<a
-										href="#"
-										className="hover:text-white transition-colors text-sm sm:text-base"
-									>
-										About Us
-									</a>
-								</li>
-								<li>
-									<a
-										href="#"
-										className="hover:text-white transition-colors text-sm sm:text-base"
-									>
-										Careers
-									</a>
-								</li>
-								<li>
-									<a
-										href="#"
-										className="hover:text-white transition-colors text-sm sm:text-base"
-									>
-										Contact
-									</a>
-								</li>
-								<li>
-									<a
-										href="#"
-										className="hover:text-white transition-colors text-sm sm:text-base"
-									>
-										Blog
-									</a>
-								</li>
+							<ul className="space-y-4">
+								{["About Us", "Careers", "Contact", "Blog"].map((item, i) => (
+									<li key={i}>
+										<a
+											href="#"
+											className="text-slate-300 hover:text-amber-200 transition-colors duration-300 font-light text-lg"
+										>
+											{item}
+										</a>
+									</li>
+								))}
 							</ul>
 						</div>
 					</div>
 
-					<div className="border-t border-blue-900 mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center">
-						<p className="text-blue-400 mb-4 sm:mb-0 text-sm sm:text-base">
-							&copy; 2024 Eventador. All rights reserved.
+					{/* Footer Bottom */}
+					<div className="border-t border-slate-800/60 mt-16 pt-12 flex flex-col sm:flex-row justify-between items-center space-y-6 sm:space-y-0">
+						<p className="text-slate-400 font-light text-lg">
+							© 2024 Eventador. All rights reserved.
 						</p>
-						<div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6">
-							<a
-								href="#"
-								className="text-blue-400 hover:text-white transition-colors text-sm sm:text-base"
-							>
-								Privacy Policy
-							</a>
-							<a
-								href="#"
-								className="text-blue-400 hover:text-white transition-colors text-sm sm:text-base"
-							>
-								Terms of Service
-							</a>
-							<a
-								href="#"
-								className="text-blue-400 hover:text-white transition-colors text-sm sm:text-base"
-							>
-								Cookie Policy
-							</a>
+						<div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-8">
+							{["Privacy Policy", "Terms of Service", "Cookie Policy"].map(
+								(item, i) => (
+									<a
+										key={i}
+										href="#"
+										className="text-slate-400 hover:text-amber-200 transition-colors duration-300 font-light text-lg"
+									>
+										{item}
+									</a>
+								)
+							)}
 						</div>
 					</div>
 				</div>
