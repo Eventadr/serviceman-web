@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Assets
-import phoneFrame from "./assets/photo_2025-08-16_12-28-08.jpg";
-import appScreenshot from "./assets/photo_2025-08-16_12-28-08.jpg";
+// import phoneFrame from "./assets/photo_2025-08-16_12-28-08.jpg";
+// import appScreenshot from "./assets/photo_2025-08-16_12-28-08.jpg";
 import logo from "./assets/Untitled design.jpg";
 import eventImage1 from "./assets/african-wedding.png";
 import eventImage2 from "./assets/camera.png";
