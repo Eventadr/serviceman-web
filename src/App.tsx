@@ -13,6 +13,7 @@ import Homepage from "./components/Homepage";
 
 import AboutUs from "./components/Aboutus";
 import HowSection from "./components/HowItWorks";
+import { Toaster } from "sonner";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -43,6 +44,7 @@ function App() {
         <Route path="/how" element={<HowSection />} />
       </Routes>
       <FooterSection />
+      <Toaster richColors position="top-right" />
     </div>
   );
 }

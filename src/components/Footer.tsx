@@ -4,7 +4,10 @@ import Playstore from "../assets/playstore.png";
 import Insta from "../assets/icons/instagram.png";
 import Tik from "../assets/icons/tiktok.png";
 import Twit from "../assets/icons/twitter.png";
+import { toast } from "sonner";
+import { Button } from "./ui/button";
 const FooterSection = () => {
+  const date = Date;
   return (
     <div className="w-full bg-black text-white mt-20 pt-20 pb-10">
       <div className="bg-[#FF8246] w-[90%] max-w-5xl mx-auto rounded-xl py-10 text-center text-white -mt-32 shadow-lg">
@@ -72,9 +75,16 @@ const FooterSection = () => {
               placeholder="email"
               className="w-full px-3 py-2 text-black outline-none"
             />
-            <button className="bg-[#FF8246] text-white px-4 cursor-pointer">
+            <Button
+              className="bg-[#FF8246] text-white px-4 cursor-pointer"
+              onClick={() =>
+                toast.success("Thank you for SUSCRIBING", {
+                  description: date,
+                })
+              }
+            >
               Send
-            </button>
+            </Button>
           </div>
         </div>
       </div>
