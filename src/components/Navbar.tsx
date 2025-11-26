@@ -12,8 +12,8 @@ import {
 interface Props {
   logo: string;
 }
+
 export default function Navbar({ logo }: Props) {
-  //   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
 
   const [formData, setFormData] = useState({
@@ -40,96 +40,58 @@ export default function Navbar({ logo }: Props) {
   return (
     <>
       {/* Navbar */}
-      <nav className="fixed w-full z-40 transition-all duration-300 animate-fade-in bg-white shadow-md py-6 ">
+      <nav className=" sticky w-full z-40 transition-all duration-300 bg-white shadow-md py-4 sm:py-6">
         <div className="container-custom px-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
             <div className="text-xl sm:text-2xl font-bold text-blue-900 flex items-center">
-              <div className="flex justify-normal gap-1 items-center  ">
+              <div className="flex items-center gap-2">
                 <img
                   src={logo}
                   alt="Logo"
-                  className="w-8 h-8 sm:w-14 sm:h-14 rounded-full overflow-hidden "
+                  className="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full object-cover"
                 />
-                <p>Eventador</p>
+                <p className="text-base sm:text-xl md:text-2xl">Eventador</p>
               </div>
             </div>
 
             {/* Desktop Navigation */}
-            <NavigationMenu className="hidden lg:flex animate-fade-in ">
-              <NavigationMenuList className="space-x-6 flex gap-4">
-                <NavigationMenuItem>
-                  <NavigationMenuLink
-                    href="/"
-                    className="text-gray-700 hover:text-gold-600 transition-colors font-medium"
-                  >
-                    Home
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <NavigationMenuLink
-                    href="/about"
-                    className="text-gray-700 hover:text-gold-600 transition-colors font-medium"
-                  >
-                    About
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <NavigationMenuLink
-                    href="/how"
-                    className="text-gray-700 hover:text-gold-600 transition-colors font-medium"
-                  >
-                    How It Works
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <NavigationMenuLink
-                    href="/features"
-                    className="text-gray-700 hover:text-gold-600 transition-colors font-medium"
-                  >
-                    Features
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <NavigationMenuLink
-                    href="/testimonials"
-                    className="text-gray-700 hover:text-gold-600 transition-colors font-medium"
-                  >
-                    Testimonials
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <NavigationMenuLink
-                    href="/contact"
-                    className="text-gray-700 hover:text-gold-600 transition-colors font-medium"
-                  >
-                    Contact
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
+            <NavigationMenu className="hidden lg:flex">
+              <NavigationMenuList className="space-x-4 xl:space-x-6 flex items-center">
+                {[
+                  ["Home", "/"],
+                  ["About", "/about"],
+                  ["How It Works", "/how"],
+                  ["Features", "/features"],
+                  ["Testimonials", "/testimonials"],
+                  ["Contact", "/contact"],
+                ].map(([label, href]) => (
+                  <NavigationMenuItem key={label}>
+                    <NavigationMenuLink
+                      href={href}
+                      className="text-gray-700 hover:text-[#FF8246] transition-colors font-medium text-sm xl:text-base"
+                    >
+                      {label}
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                ))}
               </NavigationMenuList>
             </NavigationMenu>
 
-            <div className="hidden lg:flex space-x-4 animate-fade-in">
+            {/* Desktop CTA */}
+            <div className="hidden lg:flex animate-fade-in">
               <button
                 onClick={() => setModalOpen(true)}
-                className="bg-gradient-to-r bg-[#FF8246] text-white font-medium px-6 py-2 rounded-full hover:shadow-lg transition-shadow"
+                className="bg-[#FF8246] text-white font-medium px-4 xl:px-6 py-2 rounded-full hover:shadow-lg transition-shadow text-sm xl:text-base"
               >
                 Get the App
               </button>
             </div>
 
             {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden text-blue-900 hover:text-blue-700 animate-fade-in"
-              // onClick={() => setMobileMenuOpen(true)}
-            >
+            <button className="lg:hidden text-blue-900 hover:text-blue-700">
               <svg
-                className="w-6 h-6"
+                className="w-6 h-6 sm:w-7 sm:h-7"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

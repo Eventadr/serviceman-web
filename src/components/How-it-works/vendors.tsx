@@ -21,12 +21,12 @@ const Points = [
 ];
 const VendorsSection = () => {
   return (
-    <section className="py-20 w-full ">
-      <div className="px-12 m-auto mt-10 grid lg:grid-cols-2  gap-5">
-        <div className="max-w-full lg:w-[80%] space-y-5 mx-auto">
+    <section className="lg:py-20 py-5 w-full ">
+      <div className="lg:px-12 px-5 m-auto mt-10 grid lg:grid-cols-2  gap-5">
+        <div className="w-full lg:max-w-[80%] space-y-5 mx-auto">
           <div className="space-y-5">
             <p className="text-2xl font-semibold leading-tight">For Vendors</p>
-            <p className="w-[530px] font-medium">
+            <p className="lg:w-[530px] font-medium">
               Explore curated vendors for catering, decor, music, and more, all
               reviewed and verified.
             </p>
@@ -41,7 +41,7 @@ const VendorsSection = () => {
           })}
         </div>
         <div>
-          <img src={Phone} alt="phone-img" className="lg:w-full lg:h-full " />
+          <img src={Phone} alt="phone-img" className="lg:w-full  lg:h-full " />
         </div>
       </div>
     </section>

@@ -10,22 +10,22 @@ const FooterSection = () => {
   const date = Date;
   return (
     <div className="w-full bg-black text-white mt-20 pt-20 pb-10">
-      <div className="bg-[#FF8246] w-[90%] max-w-5xl mx-auto rounded-xl py-10 text-center text-white -mt-32 shadow-lg">
+      <div className="bg-[#FF8246] w-[90%] lg:max-w-5xl mx-auto rounded-xl py-10 text-center text-white -mt-32 shadow-lg">
         <p className="text-lg">Bring Your Dream Event to Life</p>
         <h2 className="text-4xl font-bold mt-2">Get the App Now</h2>
-        <p className="mt-2 max-w-md mx-auto">
+        <p className="mt-2 lg:max-w-md mx-auto">
           Plan events, book vendors, and manage everything, all from your phone.
         </p>
 
         <div className="flex justify-center gap-6 mt-6">
-          <div className="flex justify-between w-[502px]">
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-3 lg:w-[502px]">
             <img src={Appstore} alt="appstore-img" />
             <img src={Playstore} alt="playstore-img" />
           </div>
         </div>
       </div>
 
-      <div className="mt-20 w-[90%] max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="mt-20 w-[90%] lg:max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>
           <div className="flex items-center gap-2 text-lg font-semibold">
             <div className="w-4 h-4 rounded-full bg-[#FF8246]"></div>

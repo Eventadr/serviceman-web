@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white font-sans">
       {/* Navigation */}
-      <Navbar logo={logo} scrolled={scrolled} />
+      <Navbar logo={logo} />
 
       {/* Mobile Menu */}
       <MobileMenu
