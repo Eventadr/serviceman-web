@@ -19,8 +19,14 @@ const FooterSection = () => {
 
         <div className="flex justify-center gap-6 mt-6">
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-3 lg:w-[502px]">
-            <img src={Appstore} alt="appstore-img" />
-            <img src={Playstore} alt="playstore-img" />
+            <a href="https://www.apple.com/app-store/" target="_blank">
+              {" "}
+              <img src={Appstore} alt="appstore-img" />
+            </a>
+            <a href="https://play.google.com/store/apps" target="_blank">
+              {" "}
+              <img src={Playstore} alt="playstore-img" />
+            </a>
           </div>
         </div>
       </div>
