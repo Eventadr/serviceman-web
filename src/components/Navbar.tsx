@@ -2,12 +2,17 @@
 
 import React, { useState } from "react";
 import Form from "./Form";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "@radix-ui/react-navigation-menu";
 
 interface Props {
-  scrolled: boolean;
   logo: string;
 }
-export default function Navbar({ scrolled, logo }: Props) {
+export default function Navbar({ logo }: Props) {
   //   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -35,11 +40,7 @@ export default function Navbar({ scrolled, logo }: Props) {
   return (
     <>
       {/* Navbar */}
-      <nav
-        className={`fixed w-full z-40 transition-all duration-300 animate-fade-in ${
-          scrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
-        }`}
-      >
+      <nav className="fixed w-full z-40 transition-all duration-300 animate-fade-in bg-white shadow-md py-6 ">
         <div className="container-custom px-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
@@ -55,46 +56,64 @@ export default function Navbar({ scrolled, logo }: Props) {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex space-x-8 animate-fade-in">
-              <a
-                href="#home"
-                className="text-gray-700 hover:text-gold-600 transition-colors font-medium"
-              >
-                Home
-              </a>
-              <a
-                href="#home"
-                className="text-gray-700 hover:text-gold-600 transition-colors font-medium"
-              >
-                About
-              </a>
-              <a
-                href="#about"
-                className="text-gray-700 hover:text-gold-600 transition-colors font-medium"
-              >
-                How It Works
-              </a>
-              <a
-                href="#home"
-                className="text-gray-700 hover:text-gold-600 transition-colors font-medium"
-              >
-                Features
-              </a>
-              <a
-                href="#testimonials"
-                className="text-gray-700 hover:text-gold-600 transition-colors font-medium"
-              >
-                Testimonials
-              </a>
-              <a
-                href="#home"
-                className="text-gray-700 hover:text-gold-600 transition-colors font-medium"
-              >
-                Contact
-              </a>
-            </div>
+            <NavigationMenu className="hidden lg:flex animate-fade-in ">
+              <NavigationMenuList className="space-x-6 flex gap-4">
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    href="/"
+                    className="text-gray-700 hover:text-gold-600 transition-colors font-medium"
+                  >
+                    Home
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
 
-            {/* Desktop CTA Buttons */}
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    href="/about"
+                    className="text-gray-700 hover:text-gold-600 transition-colors font-medium"
+                  >
+                    About
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    href="/how"
+                    className="text-gray-700 hover:text-gold-600 transition-colors font-medium"
+                  >
+                    How It Works
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    href="/features"
+                    className="text-gray-700 hover:text-gold-600 transition-colors font-medium"
+                  >
+                    Features
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    href="/testimonials"
+                    className="text-gray-700 hover:text-gold-600 transition-colors font-medium"
+                  >
+                    Testimonials
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <NavigationMenuLink
+                    href="/contact"
+                    className="text-gray-700 hover:text-gold-600 transition-colors font-medium"
+                  >
+                    Contact
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+
             <div className="hidden lg:flex space-x-4 animate-fade-in">
               <button
                 onClick={() => setModalOpen(true)}

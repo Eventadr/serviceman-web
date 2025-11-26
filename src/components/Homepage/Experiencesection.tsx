@@ -1,30 +1,34 @@
 /** @format */
-import ExpeImg from "../assets/expe.png";
+import ExpeImg from "../../assets/expe.png";
+import Lotus from "../../assets/icons/lotus.png";
+import Palette from "../../assets/icons/palette.png";
+import Clock from "../../assets/icons/clock.png";
+import Handshake from "../../assets/icons/handshake.png";
 
 const Experience = [
   {
-    icon: "",
+    icon: Lotus,
     heading: "Stress-Free Planning",
     description:
-      "We handle everything — from setup to vendors — so you can enjoy your event without the headache.",
+      "We handle everything from setup to vendors, so you can enjoy your event without the headache.",
   },
   {
-    icon: "",
+    icon: Palette,
     heading: "Personalized Experiences",
     description:
-      "We handle everything — from setup to vendors — so you can enjoy your event without the headache.",
+      "We handle everything from setup to vendors, so you can enjoy your event without the headache.",
   },
   {
-    icon: "",
+    icon: Clock,
     heading: "Professional & On-Time Delivery",
     description:
-      "We handle everything — from setup to vendors — so you can enjoy your event without the headache.",
+      "We handle everything from setup to vendors, so you can enjoy your event without the headache.",
   },
   {
-    icon: "",
+    icon: Handshake,
     heading: "Stress-Free Planning",
     description:
-      "We handle everything — from setup to vendors — so you can enjoy your event without the headache.",
+      "We handle everything from setup to vendors, so you can enjoy your event without the headache.",
   },
 ];
 const ExperienceSection = () => {

@@ -1,5 +1,5 @@
 /** @format */
-import Celeb from "../assets/celeb.png";
+import Celeb from "../../assets/celeb.png";
 const CelebrateSection = () => {
   return (
     <div className="w-full py-20">

@@ -1,5 +1,5 @@
 /** @format */
-import ExpeImg from "../assets/expe.png";
+import ExpeImg from "../../assets/expe.png";
 const FeatureSection = () => {
   return (
     <section className="bg-black  h-[1000px]">

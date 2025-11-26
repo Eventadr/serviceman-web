@@ -1,16 +1,16 @@
 /** @format */
 import React from "react";
-import Image1 from "../assets/image1.png";
-import Image2 from "../assets/image2.png";
-import Image3 from "../assets/image3.png";
-import Image4 from "../assets/image4.png";
-import Image5 from "../assets/image5.png";
-import Image6 from "../assets/image6.png";
-import Image7 from "../assets/image7.png";
+import Image1 from "../../assets/image1.png";
+import Image2 from "../../assets/image2.png";
+import Image3 from "../../assets/image3.png";
+import Image4 from "../../assets/image4.png";
+import Image5 from "../../assets/image5.png";
+import Image6 from "../../assets/image6.png";
+import Image7 from "../../assets/image7.png";
 
 const JoinSection = () => {
   return (
-    <section className="relative w-full py-20 flex flex-col items-center ">
+    <section className="relative w-full pb-20 flex flex-col items-center ">
       <div className=" w-full px-12 items-center space-y-10 translate-y-1 animate-fade-in">
         <img
           src={Image1}

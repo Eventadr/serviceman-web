@@ -1,10 +1,12 @@
 /** @format */
-import EventImg from "../assets/event.png";
+import EventImg from "../../assets/event.png";
+import Fluent from "../../assets/icons/fluent.png";
+import Ghost from "../../assets/icons/ghost.png";
 
 const Event = [
   {
     image: EventImg,
-    icon: "",
+    icon: Fluent,
     platform: "Platform",
     heading: "Built to simplify, powered by trust",
     description:
@@ -12,7 +14,7 @@ const Event = [
   },
   {
     image: EventImg,
-    icon: "",
+    icon: Ghost,
     platform: "Platform",
     heading: "Built to simplify, powered by trust",
     description:
@@ -20,7 +22,7 @@ const Event = [
   },
   {
     image: EventImg,
-    icon: "",
+    icon: Fluent,
     platform: "Platform",
     heading: "Built to simplify, powered by trust",
     description:
@@ -30,7 +32,7 @@ const Event = [
 const FeatureEvent = () => {
   return (
     <div className="w-full py-20">
-      <div className="max-w-xl text-center mx-auto space-y-5 mb-5 px-12">
+      <div className="max-w-2xl text-center mx-auto space-y-5 mb-5 px-12">
         <p className="text-7xl font-semibold leading-tight ">
           Featured <span className="text-[#FF8246]">Events</span>
         </p>
@@ -39,7 +41,7 @@ const FeatureEvent = () => {
           gatherings to grand celebrations, we bring your vision to life.
         </p>
       </div>
-      <div className="grid grid-cols-3 gap-5 ">
+      <div className="grid grid-cols-3 gap-5 px-12">
         {Event.map((item, index) => {
           return (
             <div key={index} className="rounded-lg overflow-clip">
